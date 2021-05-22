@@ -3,6 +3,7 @@ package com.example.expiredate
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.inputmethod.EditorInfo
 import android.widget.*
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 val datePickerDialog =
                     DatePickerDialog(this@MainActivity, { view, expYear, expMonth, expDay ->
                         date = "" + expDay + "/" + (expMonth +1) + "/" + expYear
-                        val find : GTINModel? = list.find {gtinEditText.text.toString() == it.GTIN}
+                        val find : GTINModel? = list.find {standardizeGTIN(gtinEditText.text.toString()) == it.GTIN}
                         if(find != null) {
                             find.Date = date
                         }
@@ -69,14 +70,14 @@ class MainActivity : AppCompatActivity() {
             }
             else
             {
-                Toast.makeText(this@MainActivity, "GTIN not valid", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "GTIN not valid", Toast.LENGTH_SHORT).show()
             }
 
         }
         searchButton.setOnClickListener {
             if(isGTINValid(gtinEditText.text.toString()))
             {
-                val find : GTINModel? = list.find {gtinEditText.text.toString() == it.GTIN}
+                val find : GTINModel? = list.find {standardizeGTIN(gtinEditText.text.toString())  == it.GTIN}
                 if(find != null) {
                     val searchItem = ArrayList<GTINModel>()
                     searchItem.add(find)
@@ -85,13 +86,13 @@ class MainActivity : AppCompatActivity() {
                 else
                 {
                     mainListRecyclerView.adapter = adapter
-                    Toast.makeText(this@MainActivity, "GTIN not found", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "GTIN not found", Toast.LENGTH_SHORT).show()
                 }
             }
             else
             {
                 mainListRecyclerView.adapter = adapter
-                Toast.makeText(this@MainActivity, "GTIN not valid", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "GTIN not valid", Toast.LENGTH_SHORT).show()
             }
         }
 
