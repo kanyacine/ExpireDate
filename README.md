@@ -19,6 +19,6 @@ Le bouton de recherche ou la touche entrée du clavier permet d'afficher si il e
 Un gtin invalide ou qui n'existe pas lors de la recherche ne fait rien et un message s'affiche en bas de l'application pour prevenir l'utilisateur.
 
 Amélioration:
-Utiliser une Date au lieu d'une String pour enregistrer la date dans les GTINModel pour permettre de l'afficher au format local.
+Utiliser une Date au lieu d'une String pour enregistrer la date dans les GTINModel pour permettre de l'afficher au format local.\n
 Utiliser une base de données pour en faire des données persisantes.
 Utiliser l'appareil photo pour scanner directement les produits.
