@@ -10,7 +10,7 @@ Les données ne sont pas persistantes.
 
 
 L'application se compose d'un champ de recherche, de deux boutons et d'un recyclerview.  
-Les données sont stockées dans une liste de GTINModel (objet composé d'une string répresentant le GTIN au format GTIN14 et une string représentant la date)
+Les données sont stockées dans une liste de GTINModel (objet composé d'une string répresentant le GTIN au format GTIN14 et une string représentant la date).  
 Le choix d'utilisation d'une liste a été fait car il est simple à mettre en place techniquement et que les données n'avaient pas besoin d'être conservées.  
 Le recyclerview affiche la liste de GTINModel en temps normal.  
 Lorsque l'on veut ajouter un GTIN un dialog permettant de choisir la date s'affiche uniquement avec des dates ultérieures car c'est simple pour l'utilisateur.  
