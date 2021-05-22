@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun isGTINValid(GTIN : String) : Boolean
     {
-        return GTIN.length in 8..14
+        return GTIN.length == 8 || GTIN.length in 12..14
     }
 
     private fun standardizeGTIN(GTIN : String) : String
